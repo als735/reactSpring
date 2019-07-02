@@ -1,26 +1,17 @@
 // import {useSpring, animated} from 'react-spring'
-import React, { Component } from 'react'
-
-
-
- class UseSpring extends Component {
-    // constructor(props){
-    //     super(props); 
-    // }
+import React from 'react'
+import { useSpring, animated } from 'react-spring';
     
 
-    render() {
-        // const props = useSpring({opacity: 1, from: {opacity: 0}})
-        // <animated.div style={props}>I will fade in</animated.div>
-
-        return (
-            <div>
-                Hello Brent! 
-
-            </div>
-        )
-    }
+const HookedComponent = () => {
+    const props = useSpring({
+        opacity: 9,
+        color: 'yellow',
+        from: { opacity: 0 },
+        delay: '2000'
+    })
+    return <animated.div style={props}>This text Faded in Using hooks</animated.div>
 }
 
-
-export default UseSpring; 
+ 
+export default HookedComponent;
